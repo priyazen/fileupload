@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Home</title>
+	</head>
+	<body ng-app="fileUpload">
+		<h1>File Upload using AngularJS</h1>
+        <form  ng-controller="MyCtrl as up" name="up.upload_form">
+                Upload a Docx file :
+            <input 
+                type="file" 
+                ngf-select 
+                ng-model="up.file" 
+                name="file" 
+                ngf-pattern="'.docx'"
+                accept=".docx" 
+                ngf-max-size="50MB" 
+                />
+           
+            <button type="submit" ng-click="up.submit()">submit</button>
+            <p>{{up.progress}}</p>
+        </form>
+	</body>
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+	<script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</html>
